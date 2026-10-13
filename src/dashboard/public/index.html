@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="tr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Göztepe Stat Bot</title>
+    <link rel="stylesheet" href="/style.css" />
+    <script src="/vendor/chart.js" defer></script>
+    <script src="/app.js" defer></script>
+  </head>
+  <body>
+    <div id="login" class="login">
+      <div class="brand-mark">GS<span>●</span></div>
+      <p class="eyebrow">GÖZTEPE STAT BOT</p>
+      <h1>Topluluğunun<br />ritmini keşfet.</h1>
+      <p>
+        Mesajlar, sesli sohbetler ve birlikte geçirilen zaman.<br />Sunucunun hikâyesi tek bir
+        yerde.
+      </p>
+      <a class="button primary" href="/auth/login">Discord ile giriş yap ↗</a>
+      <p class="muted">Yalnızca yönetebildiğiniz sunuculara erişebilirsiniz.</p>
+    </div>
+    <div id="shell" hidden>
+      <aside>
+        <div class="brand">
+          <div class="brand-mark small">GS</div>
+          <div>Göztepe <strong>Stat Bot</strong><small>TOPLULUK ANALİTİĞİ</small></div>
+        </div>
+        <label for="guild">SUNUCU</label
+        ><select id="guild"></select>
+        <nav aria-label="Ana menü">
+          <button data-page="overview" class="active">◫ Overview</button
+          ><button data-page="members">♙ Members</button
+          ><button data-page="channels"># Channels</button
+          ><button data-page="leaderboards">↗ Leaderboards</button
+          ><button data-page="activity">∿ Activity</button
+          ><button data-page="settings">⚙ Settings</button>
+        </nav>
+        <div class="sidebar-foot">
+          <span id="username"></span><button id="logout">Çıkış yap</button>
+        </div>
+      </aside>
+      <main>
+        <header>
+          <div>
+            <p class="eyebrow">GÖZTEPE STAT BOT / <span id="guild-name"></span></p>
+            <h1 id="page-title">Genel bakış</h1>
+            <p id="subtitle">Sunucunun aktivitesine yakından bak.</p>
+          </div>
+          <span class="live">● Canlı veriler</span>
+        </header>
+        <div id="notice" role="status" hidden></div>
+        <section id="content" aria-live="polite"></section>
+        <footer>
+          Göztepe Stat Bot · Mesaj içerikleri kaydedilmez. · Aktif = son 7 günde mesaj veya ses
+          aktivitesi.
+        </footer>
+      </main>
+    </div>
+  </body>
+</html>
